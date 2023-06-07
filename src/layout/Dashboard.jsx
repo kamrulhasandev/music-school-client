@@ -8,6 +8,9 @@ const Dashboard = () => {
     setDrawerOpen(!drawerOpen);
   };
 
+  const isAdmin = true;
+  const isInstructor = false;
+
   return (
     <div>
       <div className="flex">
@@ -39,11 +42,38 @@ const Dashboard = () => {
             <h2 className="text-lg font-semibold">Drawer</h2>
             <p className="text-gray-500">This is a drawer.</p>
             <ul>
+              {isAdmin ? (
+                <>
+                  <li>
+                    <Link to={"manageClasses"}>Manage Class</Link>
+                  </li>
+                  <li>
+                    <Link to={"manageUsers"}>Manage Users</Link>
+                  </li>
+                </>
+              ) : isInstructor ? (
+                <>
+                  <li>
+                    <Link to={"addAClass"}>Add a Class</Link>
+                  </li>
+                  <li>
+                    <Link to={"myClasses"}>My Class</Link>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <Link to={"mySelectionClasses"}>My Selection Class</Link>
+                  </li>
+                  <li>
+                    <Link to={"myEnrolledClasses"}>My Enrolled Class</Link>
+                  </li>
+                </>
+              )}
+
+              <br />
               <li>
-                <Link to={"mySelectionClasses"}>My Selection Class</Link>
-              </li>
-              <li>
-                <Link to={"myEnrolledClasses"}>My Enrolled Class</Link>
+                <Link to={"/"}>Home</Link>
               </li>
             </ul>
           </div>
