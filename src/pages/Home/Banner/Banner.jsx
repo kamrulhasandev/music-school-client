@@ -1,37 +1,22 @@
-import React from "react";
-import Container from "../../../components/Container/Container";
-import studentImg from "../../../assets/student.png";
+import React from 'react';
+import dramerImg from '../../../assets/drammer.png'
+import { Link } from 'react-router-dom';
 const Banner = () => {
-  return (
-    <Container>
-      <div className="pt-[68px]">
-        <div className="md:flex justify-between py-24 items-center">
-          <div className="">
-            <p>Start Now !</p>
-            <h1 className=" text-6xl md:text-7xl font-bold py-5">
-              Learn a New <br /> Language
-            </h1>
-            <p>
-              Educame Language School offers German language courses for
-              university preparation combined with strong visa-support and
-              university admission services for people who wish to study in
-              Germany.
-            </p>
-            <div className="py-5">
-              <button className="bg-Teal text-white  py-3 px-5 font-semibold rounded-md">
-                All Classes
-              </button>
-            </div>
-          </div>
-          <div className="relative">
-            <div>
-              <img src={studentImg} alt="" />
-            </div>
-          </div>
-        </div>
+    return (
+        <div className="flex flex-col md:flex-row bg-white ">
+      {/* Left side - Text */}
+      <div className="flex flex-col justify-center p-10 md:w-1/2">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4"><span className='text-[#F65209]'>Welcome to the </span> Music School</h1>
+        <p className="text-xl mb-6">Unlock your musical potential with our expert instructors.</p>
+        <Link className='bg-[#F65209] w-1/3 text-center py-3 rounded text-white font-bold'>Get Started</Link>
       </div>
-    </Container>
-  );
+
+      {/* Right side - Image */}
+      <div className="md:w-1/2">
+        <img className="w-full h-auto object-cover" src={dramerImg} alt="Music School" />
+      </div>
+    </div>
+    );
 };
 
 export default Banner;
