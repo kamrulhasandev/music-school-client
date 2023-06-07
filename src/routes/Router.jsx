@@ -9,6 +9,7 @@ import Register from "../pages/SignUp/Register";
 import Dashboard from "../layout/Dashboard";
 import MySelectionClasses from "../pages/Dashboard/StudentDashboard/MySelectionClasses";
 import MyEnrolledClasses from "../pages/Dashboard/StudentDashboard/MyEnrolledClasses";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -40,15 +41,15 @@ export const router = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    element: <Dashboard/>,
+    element: <PrivateRoute><Dashboard/></PrivateRoute>,
     children: [
       {
         path: 'mySelectionClasses',
-        element: <MySelectionClasses/>
+        element: <PrivateRoute><MySelectionClasses/></PrivateRoute>
       },
       {
         path: 'myEnrolledClasses',
-        element: <MyEnrolledClasses/>
+        element: <PrivateRoute><MyEnrolledClasses/></PrivateRoute>
       }
     ]
   }

@@ -30,15 +30,28 @@ const Login = () => {
 
   const googleLogin = () => {
     signInWithGoogle()
-      .then(result => {
-        console.log(result.user)
-        navigate(from, { replace: true })
+      .then((result) => {
+        const loggedInUser = result.user
+        const saveUser = {name:loggedInUser.displayName, email:loggedInUser.email, photo:loggedInUser.photoURL}
+        fetch('http://localhost:5000/users', {
+              method: 'POST',
+              headers: {
+                'content-type': 'application/json'
+              },
+              body: JSON.stringify(saveUser)
+            })
+            .then(res => res.json())
+            .then(() => {
+                navigate(from, { replace: true });
+            })
+
+        // navigate(from, { replace: true });
       })
-      .catch(err => {
-        setLoading(false)
-        console.log(err.message)
-      })
-  }
+      .catch((err) => {
+        setLoading(false);
+        console.log(err.message);
+      });
+  };
 
 
   return (
