@@ -9,7 +9,7 @@ const NavBar = () => {
   return (
     <div className="fixed w-full top-0 left-0 z-20">
       <div>
-        <div className="md:w-[1300px] py-4 mx-auto flex items-center justify-between px-2">
+        <div className="md:w-[1200px] py-4 mx-auto flex items-center justify-between px-2">
           <div className="flex items-center gap-4">
             <HiMenuAlt1
               onMouseDown={() => setToggle(true)}
