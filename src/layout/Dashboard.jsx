@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
+import logo from '../assets/logo.png'
+import useAdmin from "../hooks/useAdmin";
+import useInstructor from "../hooks/useInstructor";
 
 const Dashboard = () => {
   const [drawerOpen, setDrawerOpen] = useState(true);
@@ -8,8 +11,9 @@ const Dashboard = () => {
     setDrawerOpen(!drawerOpen);
   };
 
-  const isAdmin = true;
-  const isInstructor = false;
+  // const isAdmin = true;
+  const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor()
 
   return (
     <div>
@@ -39,8 +43,9 @@ const Dashboard = () => {
           } bg-white shadow-lg`}
         >
           <div className="px-6 py-4">
-            <h2 className="text-lg font-semibold">Drawer</h2>
-            <p className="text-gray-500">This is a drawer.</p>
+            <img src={logo} className="py-5" alt="" />
+            <hr />
+            
             <ul>
               {isAdmin ? (
                 <>
@@ -67,6 +72,9 @@ const Dashboard = () => {
                   </li>
                   <li>
                     <Link to={"myEnrolledClasses"}>My Enrolled Class</Link>
+                  </li>
+                  <li>
+                    <Link to={"myEnrolledClasses"}>Payment History</Link>
                   </li>
                 </>
               )}
