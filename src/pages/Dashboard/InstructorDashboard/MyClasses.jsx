@@ -6,7 +6,11 @@ const MyClasses = () => {
     return (
         <div>
             <h1>My Classes</h1>
-            {myClasses.length}
+            {
+                myClasses.map(item => <div key={item._id}>
+                    <p>{item.status}</p>
+                </div>)
+            }
         </div>
     );
 };
