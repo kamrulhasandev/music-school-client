@@ -39,7 +39,6 @@ const handleMakeInstructor = (user) => {
 
   return (
     <div>
-      <h1>Manage User {users.length}</h1>
       <div className="flex justify-center items-center">
         <div className="overflow-x-auto">
           <table className="table table-zebra">
