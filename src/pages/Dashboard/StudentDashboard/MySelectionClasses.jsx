@@ -1,8 +1,41 @@
 import React from "react";
 import useSelectClass from "../../../hooks/useSelectClass";
+import Swal from "sweetalert2";
 
 const MySelectionClasses = () => {
-  const [selectClass] = useSelectClass();
+  const [selectClass, refetch] = useSelectClass();
+
+  const handleDelete = (id) => {
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't Delete this class !",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          fetch(`http://localhost:5000/selectedClass/${id}`,{
+            method: 'DELETE'
+          })
+          .then(res => res.json())
+          .then(data => {
+            if(data.deletedCount > 0){
+                refetch();
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                  )
+            }
+          })
+        }
+      })
+  }
+  
+
+
   return (
     <div>
       <h1 className="text-4xl font-bold text-center py-5">
@@ -103,7 +136,7 @@ const MySelectionClasses = () => {
                           <button>Enroll</button>
                         </td>
                         <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                          <button>Delete</button>
+                          <button onClick={()=>handleDelete(item._id)} className="bg-red-500 p-1 rounded-xl text-white">Delete</button>
                         </td>
                       </tr>
                     ))}
