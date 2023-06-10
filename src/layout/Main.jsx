@@ -5,10 +5,13 @@ import Navbar from '../pages/Shared/Navbar/NavBar';
 
 const Main = () => {
     return (
-        <div className='max-w-screen-xl mx-auto'>
+        <div className=''>
             <Navbar/>
             <Outlet/>
+            <div className='bg-[#e5b39e]'>
+
             <Footer/>
+            </div>
         </div>
     );
 };

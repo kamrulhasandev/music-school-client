@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 const useSelectClass = () => {
     const {user} = useContext(AuthContext)
-    console.log(user.email);
     const {isLoading,refetch, data: selectClass = [] } = useQuery({
         queryKey: ['selectedClass', user?.email],
         queryFn: async () => {

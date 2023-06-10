@@ -16,11 +16,15 @@ import ManageClasses from "../pages/Dashboard/AdminDashboard/ManageClasses";
 import ManageUser from "../pages/Dashboard/AdminDashboard/ManageUser";
 import AdminRoute from "./AdminRoute";
 import InstructorRoute from "./InstructorRoute";
+import Payment from "../pages/Dashboard/StudentDashboard/Payment";
+import PaymentHistory from "../pages/Dashboard/StudentDashboard/PaymentHistory";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main/>,
+    errorElement: <ErrorPage/>,
     children: [
         {
             path: '/',
@@ -56,6 +60,21 @@ export const router = createBrowserRouter([
       {
         path: 'myEnrolledClasses',
         element: <PrivateRoute><MyEnrolledClasses/></PrivateRoute>
+        
+      },
+      {
+        path: 'myPaymentHistory',
+        element: <PrivateRoute><PaymentHistory/></PrivateRoute>
+      },
+      {
+        path: 'payment/:id',
+        element: <Payment/>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/selectedClass/${params.id}`, {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }),
       },
       {
         path: 'addAClass',

@@ -1,43 +1,114 @@
 import React from "react";
-import dramerImg from "../../../assets/drammer.png";
 import { Link } from "react-router-dom";
-import { MovingComponent } from "react-moving-text";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import SwiperCore, { Autoplay } from "swiper";
+import { Pagination } from "swiper";
+
+import slide1 from '../../../assets/slide1.jpg'
+import slide2 from '../../../assets/slide2.jpg'
+import slide3 from '../../../assets/slide3.jpg'
 const Banner = () => {
   return (
-    <div className="flex flex-col md:flex-row bg-white ">
-      {/* Left side - Text */}
+    
 
-      <div className="flex flex-col justify-center p-10 md:w-1/2">
-        <MovingComponent
-          type="glowing"
-          duration="1000ms"
-          delay="0s"
-          direction="normal"
-          timing="ease"
-          iteration="2"
-          fillMode="none"
-        >
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            <span className="text-[#F65209]">Welcome to the </span> Music School
-          </h1>
-        </MovingComponent>
-
-        <p className="text-xl mb-6">
-          Unlock your musical potential with our expert instructors.
-        </p>
-        <Link className="bg-[#F65209] w-1/3 text-center py-3 rounded text-white font-bold">
-          Get Started
-        </Link>
-      </div>
-
-      {/* Right side - Image */}
-      <div className="md:w-1/2">
-        <img
-          className="w-full h-auto object-cover"
-          src={dramerImg}
-          alt="Music School"
-        />
-      </div>
+    <div>
+      <Swiper
+        pagination={true}
+        slidesPerView={1}
+        modules={[Pagination, Autoplay]}
+        className="mySwiper"
+        onSlideChange={() => console.log("slide change")}
+        onSwiper={(swiper) => console.log(swiper)}
+        autoplay
+        loop={true}
+      >
+        <SwiperSlide>
+          <div
+            className="hero h-[70vh]"
+            style={{
+              backgroundImage: `url(${slide1})`,
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+            }}
+          >
+            <div data-aos="fade-right" className="container mx-auto">
+              <div className=" absolute flex justify-start transform -translate-y-1/2 left-30 top-1/2 text-white">
+                <div data-aos="fade-right" className="max-w-md px-5  ">
+                  <h1 className="mb-5 hero-heading lg:text-5xl text-2xl  font-bold">
+                  Learn to Play Your Favorite Instrument.
+                  </h1>
+                  <p className="text-gray-200 mb-3">
+                  No matter what type of music school you choose, you can expect to learn from experienced and qualified teachers.
+                  </p>
+                  <Link to="/instructor">
+                    <button className="bg-[#f65209] rounded-md px-3 py-2 text-white">
+                      Our Instructor
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            className="hero h-[70vh]"
+            style={{
+              backgroundImage: `url(${slide2})`,
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+            }}
+          >
+            <div className="container mx-auto">
+              <div className=" absolute flex justify-start transform -translate-y-1/2 left-30 top-1/2 text-white">
+                <div data-aos="fade-right" className="max-w-md px-5 ">
+                  <h1 className="mb-5 hero-heading lg:text-5xl text-2xl font-bold capitalize">
+                  Music Lessons for All Ages and Levels
+                  </h1>
+                  <p className="text-gray-200 mb-3">
+                  Music school is a great way to learn to play an instrument, improve your skills, and make new friends.
+                  </p>
+                  <Link to="/Classes">
+                    <button className="bg-[#f65209] rounded-md px-3 py-2 text-white">
+                      Our Classes
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div
+            className="hero h-[70vh]"
+            style={{
+              backgroundImage: `url(${slide3})`,
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+            }}
+          >
+            <div className="container mx-auto">
+              <div className=" absolute flex justify-start transform -translate-y-1/2 left-30 top-1/2 text-white">
+                <div data-aos="fade-right" className="max-w-md px-5">
+                  <h1 className="mb-5 hero-heading lg:text-5xl text-2xl font-bold">
+                  Our Music School Has a Winning Tradition
+                  </h1>
+                  <p className="text-gray-200 mb-3">
+                  If you are interested in learning to play an instrument, music school is a great way to get started.
+                  </p>
+                  <Link to="/login">
+                    <button className="bg-[#f65209] rounded-md px-3 py-2 text-white">
+                      Get Started
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
     </div>
   );
 };

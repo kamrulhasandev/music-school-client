@@ -1,40 +1,35 @@
 import React from "react";
 import useSelectClass from "../../../hooks/useSelectClass";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const MySelectionClasses = () => {
   const [selectClass, refetch] = useSelectClass();
 
   const handleDelete = (id) => {
     Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't Delete this class !",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          fetch(`http://localhost:5000/selectedClass/${id}`,{
-            method: 'DELETE'
-          })
-          .then(res => res.json())
-          .then(data => {
-            if(data.deletedCount > 0){
-                refetch();
-                Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                  )
+      title: "Are you sure?",
+      text: "You won't Delete this class !",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/selectedClass/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              refetch();
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
             }
-          })
-        }
-      })
-  }
-  
-
+          });
+      }
+    });
+  };
 
   return (
     <div>
@@ -106,8 +101,10 @@ const MySelectionClasses = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {selectClass.map((item, index) => (
-                      <tr
+                    {
+                      selectClass.filter(item => item.status !== 'paid')
+                      .map((item, index) => (
+                        <tr
                         className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100"
                         key={item._id}
                       >
@@ -133,13 +130,23 @@ const MySelectionClasses = () => {
                           {item.price}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                          <button>Enroll</button>
+                          <Link to={`/dashboard/payment/${item?._id}`}>
+                            <button className="bg-green-500 p-1 rounded-2xl text-white">
+                              Enroll
+                            </button>
+                          </Link>
                         </td>
                         <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                          <button onClick={()=>handleDelete(item._id)} className="bg-red-500 p-1 rounded-xl text-white">Delete</button>
+                          <button
+                            onClick={() => handleDelete(item._id)}
+                            className="bg-red-500 p-1 rounded-xl text-white"
+                          >
+                            Delete
+                          </button>
                         </td>
                       </tr>
-                    ))}
+                      ))
+                    }
                   </tbody>
                 </table>
               </div>
