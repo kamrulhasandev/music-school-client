@@ -19,6 +19,7 @@ import InstructorRoute from "./InstructorRoute";
 import Payment from "../pages/Dashboard/StudentDashboard/Payment";
 import PaymentHistory from "../pages/Dashboard/StudentDashboard/PaymentHistory";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import UpdateClassInfo from "../pages/Dashboard/InstructorDashboard/UpdateClassInfo";
 
 export const router = createBrowserRouter([
   {
@@ -83,6 +84,12 @@ export const router = createBrowserRouter([
       {
         path: 'myClasses',
         element: <InstructorRoute><MyClasses/></InstructorRoute>
+      },
+      {
+        path: 'updateClass/:id',
+        element: <InstructorRoute><UpdateClassInfo/></InstructorRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/updateOne/${params.id}`)
+
       },
       {
         path: 'manageClasses',

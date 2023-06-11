@@ -1,58 +1,18 @@
-import React, { useContext } from "react";
-import { AuthContext } from "../../../providers/AuthProvider";
-import { imageUpload } from "../../../utility/utility";
-import { Toaster, toast } from "react-hot-toast";
+import React from 'react';
+import { Toaster } from 'react-hot-toast';
+import { useLoaderData, useParams } from 'react-router-dom';
 
-const AddAClass = () => {
-    const {user} = useContext(AuthContext);
-
-
-    const handleAddClass = (event) => {
-        event.preventDefault();
-        const className = event.target.className.value;
-        const instructorName = event.target.instructorName.value;
-        const instructorEmail = event.target.instructorEmail.value;
-        const availableSeats = parseFloat(event.target.availableSeats.value);
-        const price = event.target.price.value;
-        const status = 'pending'
-        const classImage = event.target.classImage.files[0];
-
-        imageUpload(classImage)
-        .then(data => {
-            const image = data.data.display_url
-            const classData = {className,image,instructorName,instructorEmail,availableSeats,price, status, totalStudent:0}
-            
-            // post classData in database
-            fetch(`http://localhost:5000/allClasses`, {
-                method: 'POST',
-                headers: {
-                    'content-type' : 'application/json'
-                },
-                body: JSON.stringify(classData)
-            })
-            .then(data => {
-                console.log(data);
-                toast.success('Class Added Successfully. Please wait for admin approval')
-            })
-            .catch(error => {
-                console.log(error);
-            })
-        })
-        .catch(error => {
-            console.log(error);
-        })
-
-        // console.log(className, classImage, instructorName, instructorEmail, availableSeats, price, );
-    }
-
-
-
-
-  return (
-    <div>
+const UpdateClassInfo = () => {
+    const id = useParams()
+    console.log(id);
+    const defaultData = useLoaderData()
+    console.log(defaultData);
+    return (
+        <div>
+            <div>
       <div className="w-1/2  mx-auto">
-        <h2 className="text-center text-3xl font-bold py-5">Add A Class</h2>
-        <form onSubmit={handleAddClass} className="space-y-6 ng-untouched ng-pristine ng-valid">
+        <h2 className="text-center text-3xl font-bold py-5">Update A Class</h2>
+        <form  className="space-y-6 ng-untouched ng-pristine ng-valid">
           <div className="space-y-4">
             <div>
               <label htmlFor="className" className="block mb-2 text-sm">
@@ -60,6 +20,7 @@ const AddAClass = () => {
               </label>
               <input
                 type="text"
+                defaultValue={defaultData.className}
                 name="className"
                 id="className"
                 placeholder="Enter Your Name Here"
@@ -90,7 +51,7 @@ const AddAClass = () => {
               </div>
               <input
                 type="text"
-                value={user.displayName}
+                defaultValue={defaultData.instructorName}
                 name="instructorName"
                 id="instructorName"
                 disabled
@@ -106,7 +67,7 @@ const AddAClass = () => {
               </div>
               <input
                 type="email"
-                value={user.email}
+                defaultValue={defaultData.instructorEmail}
                 name="instructorEmail"
                 id="instructorEmail"
                 disabled
@@ -122,6 +83,7 @@ const AddAClass = () => {
               </div>
               <input
                 type="number"
+                defaultValue={defaultData.availableSeats}
                 name="availableSeats"
                 id="availableSeats"
                 required
@@ -137,6 +99,7 @@ const AddAClass = () => {
               </div>
               <input
                 type="number"
+                defaultValue={defaultData.price}
                 name="price"
                 id="price"
                 required
@@ -151,14 +114,15 @@ const AddAClass = () => {
               type="submit"
               className="bg-[#f65209] w-full rounded-md py-3 text-white"
             >
-              Add a Class
+              Update
             </button>
           </div>
         </form>
       </div>
       <Toaster/>
     </div>
-  );
+        </div>
+    );
 };
 
-export default AddAClass;
+export default UpdateClassInfo;

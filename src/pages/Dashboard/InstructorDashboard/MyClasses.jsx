@@ -1,6 +1,7 @@
 import React from 'react';
 import useMyClass from '../../../hooks/useMyClass';
 import { Toaster } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 const MyClasses = () => {
     const [myClasses, refetch] = useMyClass();
@@ -109,7 +110,7 @@ const MyClasses = () => {
                         scope="col"
                         className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                       >
-                        Total Enrolled
+                        {item.totalStudent}
                       </td>
                       <td
                         scope="col"
@@ -133,7 +134,9 @@ const MyClasses = () => {
                         scope="col"
                         className="text-sm font-medium text-gray-900 px-6 py-4  text-center"
                       >
+                        <Link to={`/dashboard/updateClass/${item._id}`}>
                         <button className='bg-emerald-600 text-white  font-semibold p-1 rounded-2xl'>Update</button>
+                        </Link>
                       </td>
                         
                       </tr>

@@ -121,7 +121,7 @@ const ManageClasses = () => {
                       </th>
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left text-center"
+                        className="text-sm font-medium text-gray-900 px-6 py-4  text-center"
                       >
                         Action
                       </th>
@@ -160,15 +160,23 @@ const ManageClasses = () => {
                         <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap flex gap-2">
                           <button
                             onClick={() => handleApproved(item._id)}
-                            className="bg-green-600 text-white p-1 rounded-lg"
-                            disabled={item.status === "APPROVE"}
+                            className={`bg-green-600 text-white p-1 rounded-lg ${
+                              item.status === "approved" || item.status === "deny"
+                                ? "opacity-50 cursor-not-allowed"
+                                : ""
+                            }`}
+                            disabled={item.status === "approved" || item.status === "deny"}
                           >
                             Approved
                           </button>
                           <button
                             onClick={() => handleDeny(item._id)}
-                            className="bg-red-600 text-white p-1 rounded-lg"
-                            disabled={item.status === "DENY"}
+                            className={`bg-red-600 text-white p-1 rounded-lg ${
+                              item.status === "deny" || item.status === "approved"
+                                ? "opacity-50 cursor-not-allowed"
+                                : ""
+                            }`}
+                            disabled={item.status === "deny" || item.status === "approved"}
                           >
                             Deny
                           </button>

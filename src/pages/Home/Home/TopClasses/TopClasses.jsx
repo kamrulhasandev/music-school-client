@@ -3,27 +3,31 @@ import { AuthContext } from "../../../../providers/AuthProvider";
 import Swal from "sweetalert2";
 
 const TopClasses = () => {
-  const [classes, setClasses] = useState();
+  const [classes, setClasses] = useState([]);
   useEffect(() => {
     fetch("http://localhost:5000/approvedClasses")
       .then((res) => res.json())
       .then((data) => {
-        setClasses(data);
+        if (data) {
+          const sortedClasses = data.sort((a, b) => b.totalStudent - a.totalStudent);
+          setClasses(sortedClasses);
+        }
       });
   }, []);
 
-    const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
-  const handleSelect = (id) => {
-    if(!user){
-        Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Please log in before selecting the course.",
-          });
-          return;
+  const handleSelect = (item) => {
+    if (!user) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Please log in before selecting the course.",
+      });
+      return;
     }
-  }
+  };
+
   const sliceClasses = classes?.slice(0, 6);
 
   return (
@@ -47,23 +51,22 @@ const TopClasses = () => {
                   src={item.image}
                   alt="product image"
                 />
-                
               </a>
               <div className="mt-4 px-5 pb-5">
-                  <h5 className="text-xl tracking-tight text-slate-900">
-                    {item.className}
-                  </h5>
-                  <p>Instructor: {item.instructorName}</p>
+                <h5 className="text-xl tracking-tight text-slate-900">{item.className}</h5>
+                <p>Instructor: {item.instructorName}</p>
                 <div className="mt-2 mb-5 flex items-center justify-between">
                   <p>
                     <span className="text-3xl font-bold text-slate-900">Price: ${item.price}</span>
-                    
                   </p>
-                  
                 </div>
-                <button className="bg-[#F65209] w-full text-white px-4 py-2 rounded-md hover:bg-[#d84f14]"
-                disabled={parseInt(item.availableSeats) === 0}
-                onClick={() => handleSelect(item)}>Select Class</button>
+                <button
+                  className="bg-[#F65209] w-full text-white px-4 py-2 rounded-md hover:bg-[#d84f14]"
+                  disabled={parseInt(item.availableSeats) === 0}
+                  onClick={() => handleSelect(item)}
+                >
+                  Select Class
+                </button>
               </div>
             </div>
           </div>

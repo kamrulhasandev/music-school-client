@@ -38,36 +38,153 @@ const handleMakeInstructor = (user) => {
   
 
   return (
-    <div>
-      <div className="flex justify-center items-center">
-        <div className="overflow-x-auto">
-          <table className="table table-zebra">
-            {/* head */}
-            <thead>
-              <tr>
-                <th></th>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th className="text-center">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {
-                users.map((user,index) => <tr key={user._id}>
-                    <th>{index + 1}</th>
-                    <th><img src={user.photo} className="h-14 w-14 rounded-full" alt="" /></th>
-                    <th>{user.name}</th>
-                    <th>{user.email}</th>
-                    <th><button onClick={()=>handleMakeInstructor(user)} disabled={user.role === 'instructor' ? true : false} className="mr-5">Make Instructor</button><button onClick={()=>handleMakeAdmin(user)} disabled={user.role === 'admin' ? true : false}>Make Admin</button></th>
-                </tr>)
-              }
+    // <div>
+    //   <div className="flex justify-center items-center">
+    //     <div className="overflow-x-auto">
+    //       <table className="table table-zebra">
+    //         {/* head */}
+    //         <thead>
+    //           <tr>
+    //             <th></th>
+    //             <th>Image</th>
+    //             <th>Name</th>
+    //             <th>Role</th>
+    //             <th>Email</th>
+    //             <th className="text-center">Status</th>
+    //           </tr>
+    //         </thead>
+    //         <tbody>
+    //           {
+    //             users.map((user,index) => <tr key={user._id}>
+    //                 <th>{index + 1}</th>
+    //                 <th><img src={user.photo} className="h-14 w-14 rounded-full" alt="" /></th>
+    //                 <th>{user.name}</th>
+    //                 <th>{user.role ? user.role : 'Student'}</th>
+    //                 <th>{user.email}</th>
+    //                 <th><button onClick={()=>handleMakeInstructor(user)} disabled={user.role === 'instructor' ? true : false} className="mr-5">Make Instructor</button><button onClick={()=>handleMakeAdmin(user)} disabled={user.role === 'admin' ? true : false}>Make Admin</button></th>
+    //             </tr>)
+    //           }
               
-            </tbody>
-          </table>
+    //         </tbody>
+    //       </table>
+    //     </div>
+    //   </div>
+    //   <Toaster/>
+    // </div>
+
+
+
+    <div>
+      <h1 className="text-3xl font-bold text-center py-5">
+        Manage All Classes
+      </h1>
+      <div>
+        <div className="flex flex-col">
+          <div className="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
+            <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+              <div className="overflow-hidden">
+                <table className="min-w-full">
+                  <thead className="bg-gray-200 border-b">
+                    <tr>
+                      <th
+                        scope="col"
+                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                      >
+                        #
+                      </th>
+                      <th
+                        scope="col"
+                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                      >
+                        Photo
+                      </th>
+                      <th
+                        scope="col"
+                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                      >
+                        Role
+                      </th>
+                      <th
+                        scope="col"
+                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                      >
+                        Name
+                      </th>
+                      <th
+                        scope="col"
+                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                      >
+                        Email
+                      </th>
+                      <th
+                        scope="col"
+                        className="text-sm font-medium text-gray-900 px-6 py-4 text-center"
+                      >
+                        Status
+                      </th>
+                      
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {users.map((user, index) => (
+                      <tr
+                        className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100"
+                        key={user._id}
+                      >
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                          {index + 1}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        <img src={user.photo} className="h-14 w-14 rounded-full" alt="" />
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        {user.role ? user.role : 'Student'}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                          {user.name}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                          {user.email}
+                        </td>
+                       
+                        <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap justify-center flex gap-2">
+                          <button
+                            onClick={() => handleMakeAdmin(user)}
+                            className={`bg-green-600 text-white p-1 rounded-lg ${
+                              user.role === "admin" 
+                                ? "opacity-50 cursor-not-allowed"
+                                : ""
+                            }`}
+                            disabled={user.role === "admin"}
+                          >
+                            Make Admin
+                          </button>
+                          <button
+                            onClick={() => handleMakeInstructor(user)}
+                            className={`bg-green-600 text-white p-1 rounded-lg ${
+                              user.role === "instructor" 
+                                ? "opacity-50 cursor-not-allowed"
+                                : ""
+                            }`}
+                            disabled={user.role === "instructor"}
+                          >
+                            Make Instructor
+                          </button>
+                          
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <Toaster />
         </div>
       </div>
-      <Toaster/>
+
+      
     </div>
   );
 };
