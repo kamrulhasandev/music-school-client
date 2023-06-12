@@ -23,7 +23,7 @@ const AddAClass = () => {
             const classData = {className,image,instructorName,instructorEmail,availableSeats,price, status, totalStudent:0}
             
             // post classData in database
-            fetch(`http://localhost:5000/allClasses`, {
+            fetch(`https://school-server-gamma.vercel.app/allClasses`, {
                 method: 'POST',
                 headers: {
                     'content-type' : 'application/json'

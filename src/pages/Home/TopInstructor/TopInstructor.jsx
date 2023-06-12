@@ -8,7 +8,7 @@ import './TopInstructor.css'
 const TopInstructor = () => {
   const [instructors, setInstructors] = useState();
   useEffect(() => {
-    fetch("http://localhost:5000/instructors")
+    fetch("https://school-server-gamma.vercel.app/instructors")
       .then((res) => res.json())
       .then((data) => {
         setInstructors(data);

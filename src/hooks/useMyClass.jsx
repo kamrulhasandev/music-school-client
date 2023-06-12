@@ -13,7 +13,7 @@ const useMyClass = () => {
       }
 
       try {
-        const response = await fetch(`http://localhost:5000/classesByInstructorEmail?email=${user.email}`);
+        const response = await fetch(`https://school-server-gamma.vercel.app/classesByInstructorEmail?email=${user.email}`);
         return response.json();
       } catch (error) {
         console.error(error);

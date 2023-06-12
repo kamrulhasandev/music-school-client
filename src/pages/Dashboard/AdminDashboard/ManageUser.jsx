@@ -11,7 +11,7 @@ const ManageUser = () => {
   });
 
 const handleMakeAdmin = (user) => {
-    fetch(`http://localhost:5000/users/admin/${user._id}`, {
+    fetch(`https://school-server-gamma.vercel.app/users/admin/${user._id}`, {
       method: 'PATCH'
     })
     .then(res => res.json())
@@ -23,7 +23,7 @@ const handleMakeAdmin = (user) => {
     })
   };
 const handleMakeInstructor = (user) => {
-    fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+    fetch(`https://school-server-gamma.vercel.app/users/instructor/${user._id}`, {
       method: 'PATCH'
     })
     .then(res => res.json())

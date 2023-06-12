@@ -78,14 +78,14 @@ const CheckOutForm = ({ item }) => {
         console.log(res.data);
         if (res.data.insertedId) {
           toast.success(`your payment is successful. ID: ${paymentIntent.id}`);
-          fetch(`http://localhost:5000/selectedClass/${_id}`, {
+          fetch(`https://school-server-gamma.vercel.app/selectedClass/${_id}`, {
             method: "PUT",
           })
             .then((res) => res.json())
             .then((data) => {
               console.log(data);
             });
-            fetch(`http://localhost:5000/update/${classId}`, {
+            fetch(`https://school-server-gamma.vercel.app/update/${classId}`, {
               method: 'PATCH'
             })
             .then(res => res.json())

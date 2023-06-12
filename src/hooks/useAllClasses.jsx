@@ -4,7 +4,7 @@ const useAllClasses = () => {
   const { isLoading, data: allClasses = [], refetch } = useQuery({
     queryKey: ["allClasses"],
     queryFn: async () => {
-      const response = await fetch("http://localhost:5000/allClasses");
+      const response = await fetch("https://school-server-gamma.vercel.app/allClasses");
       return response.json();
     },
   });

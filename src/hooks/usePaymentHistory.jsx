@@ -7,7 +7,7 @@ const usePaymentHistory = () => {
     const {isLoading,refetch, data: historyData = [] } = useQuery({
         queryKey: ['payments', user?.email],
         queryFn: async () => {
-            const response = await fetch(`http://localhost:5000/payments?email=${user.email}`)
+            const response = await fetch(`https://school-server-gamma.vercel.app/payments?email=${user.email}`)
             return response.json();
         }
         

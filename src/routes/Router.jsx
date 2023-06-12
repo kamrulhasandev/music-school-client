@@ -71,7 +71,7 @@ export const router = createBrowserRouter([
         path: 'payment/:id',
         element: <Payment/>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/selectedClass/${params.id}`, {
+          fetch(`https://school-server-gamma.vercel.app/selectedClass/${params.id}`, {
             headers: {
               "Content-Type": "application/json",
             },
@@ -88,7 +88,7 @@ export const router = createBrowserRouter([
       {
         path: 'updateClass/:id',
         element: <InstructorRoute><UpdateClassInfo/></InstructorRoute>,
-        // loader: ({params}) => fetch(`http://localhost:5000/updateOne/${params.id}`)
+        // loader: ({params}) => fetch(`https://school-server-gamma.vercel.app/updateOne/${params.id}`)
 
       },
       {

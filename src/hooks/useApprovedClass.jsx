@@ -4,7 +4,7 @@ const useApprovedClass = () => {
   const { isLoading, data: approvedClasses = [], refetch } = useQuery({
     queryKey: ["approvedClasses"],
     queryFn: async () => {
-      const response = await fetch("http://localhost:5000/approvedClasses");
+      const response = await fetch("https://school-server-gamma.vercel.app/approvedClasses");
       return response.json();
     },
   });

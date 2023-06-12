@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 const TopClasses = () => {
   const [classes, setClasses] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/approvedClasses")
+    fetch("https://school-server-gamma.vercel.app/approvedClasses")
       .then((res) => res.json())
       .then((data) => {
         if (data) {

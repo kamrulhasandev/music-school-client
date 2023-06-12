@@ -21,7 +21,7 @@ const Classes = () => {
           return;
     }
     const selectedClass = {classId: _id, image, className, instructorName, instructorEmail, availableSeats, price, email:user.email}
-    fetch(`http://localhost:5000/selectedClass`, {
+    fetch(`https://school-server-gamma.vercel.app/selectedClass`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

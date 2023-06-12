@@ -33,7 +33,7 @@ const Login = () => {
       .then((result) => {
         const loggedInUser = result.user
         const saveUser = {name:loggedInUser.displayName, email:loggedInUser.email, photo:loggedInUser.photoURL}
-        fetch('http://localhost:5000/users', {
+        fetch('https://school-server-gamma.vercel.app/users', {
               method: 'POST',
               headers: {
                 'content-type': 'application/json'

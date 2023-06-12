@@ -10,7 +10,7 @@ const ManageClasses = () => {
   const [selectedItemId, setSelectedItemId] = useState(null);
 
   const handleApproved = (id) => {
-    fetch(`http://localhost:5000/updateStatusApproved/${id}`, {
+    fetch(`https://school-server-gamma.vercel.app/updateStatusApproved/${id}`, {
       method: "PUT",
     })
       .then((res) => res.json())
@@ -23,7 +23,7 @@ const ManageClasses = () => {
   };
 
   const handleDeny = (id) => {
-    fetch(`http://localhost:5000/updateStatusDeny/${id}`, {
+    fetch(`https://school-server-gamma.vercel.app/updateStatusDeny/${id}`, {
       method: "PUT",
     })
       .then((res) => res.json())
@@ -41,7 +41,7 @@ const ManageClasses = () => {
   };
 
   const handleSubmitFeedback = () => {
-    fetch(`http://localhost:5000/updateFeedback/${selectedItemId}`, {
+    fetch(`https://school-server-gamma.vercel.app/updateFeedback/${selectedItemId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

@@ -8,7 +8,7 @@ const UpdateClassInfo = () => {
     // // const defaultData = useLoaderData()
     // // console.log(defaultData);
     // useEffect(()=>{
-    //   fetch(`http://localhost:5000/updateOne/${id}`)
+    //   fetch(`https://school-server-gamma.vercel.app/updateOne/${id}`)
     //   .then(res => res.json())
     //   .then(data => {
     //     console.log(data);
