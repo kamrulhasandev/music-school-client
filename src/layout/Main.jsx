@@ -8,7 +8,7 @@ const Main = () => {
         <div className=''>
             <Navbar/>
             <Outlet/>
-            <div className='bg-[#e5b39e]'>
+            <div className='bg-slate-400 text-black'>
 
             <Footer/>
             </div>

@@ -5,6 +5,7 @@ import TopInstructor from '../TopInstructor/TopInstructor';
 import TopClasses from './TopClasses/TopClasses';
 import ContactUs from '../ContactUs/ContactUs';
 import AboutPage from '../../AboutPage/AboutPage';
+import Aos from 'aos';
 
 const Home = () => {
     return (
@@ -13,9 +14,7 @@ const Home = () => {
                 <title>Educame | Home</title>
             </Helmet>
             <Banner/>
-            <div className='bg-[#ECF2FF]'>
             <TopClasses/>
-            </div>
             <TopInstructor/>
             <AboutPage/>
             <ContactUs/>

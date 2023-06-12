@@ -3,7 +3,7 @@ import image from '../../assets/drammer.png'
 
 const AboutPage = () => {
     return (
-        <div className='max-w-screen-xl px-10 mx-auto'>
+        <div className='max-w-screen-xl px-10 mx-auto py-10'>
             <div>
                 <div className='md:flex items-center gap-20'>
                     <div className='md:w-1/2'>

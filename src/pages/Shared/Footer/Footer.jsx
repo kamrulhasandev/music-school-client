@@ -39,7 +39,7 @@ const Footer = () => {
               title="Our email"
               className="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800"
             >
-              info@lorem.mail
+              musicuniverse@gmail.com
             </a>
           </div>
           <div className="flex">
@@ -88,8 +88,7 @@ const Footer = () => {
             </a>
           </div>
           <p className="mt-4 text-sm text-gray-500">
-            Bacon ipsum dolor amet short ribs pig sausage prosciutto chicken
-            spare ribs salami.
+            If any question or problem please contact our social media.
           </p>
         </div>
       </div>
