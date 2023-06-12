@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import TopInstructor from '../TopInstructor/TopInstructor';
 import TopClasses from './TopClasses/TopClasses';
 import ContactUs from '../ContactUs/ContactUs';
+import AboutPage from '../../AboutPage/AboutPage';
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
             <TopClasses/>
             </div>
             <TopInstructor/>
+            <AboutPage/>
             <ContactUs/>
         </div>
     );

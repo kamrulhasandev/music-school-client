@@ -3,6 +3,12 @@ import usePaymentHistory from '../../../hooks/usePaymentHistory';
 
 const PaymentHistory = () => {
     const [historyData, refetch] = usePaymentHistory();
+
+    const formatDate = (dateString) => {
+      const dateObj = new Date(dateString);
+      return dateObj.toLocaleString();
+    };
+
     return (
         <div>
       <h1 className="text-4xl font-bold text-center py-5">
@@ -69,7 +75,7 @@ const PaymentHistory = () => {
                           {item.transitionId}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                          {item.date}
+                        {formatDate(item.date)}
                         </td>
                        
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">

@@ -69,59 +69,59 @@ const ManageClasses = () => {
             <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
               <div className="overflow-hidden">
                 <table className="min-w-full">
-                  <thead className="bg-gray-200 border-b">
+                  <thead className="bg-[#F65209] border-b">
                     <tr>
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm font-medium text-white px-6 py-4 text-left"
                       >
                         #
                       </th>
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm font-medium text-white px-6 py-4 text-left"
                       >
                         Class Image
                       </th>
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm font-medium text-white px-6 py-4 text-left"
                       >
                         Class Name
                       </th>
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm font-medium text-white px-6 py-4 text-left"
                       >
                         Instructor Name
                       </th>
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm font-medium text-white px-6 py-4 text-left"
                       >
                         Instructor Email
                       </th>
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm font-medium text-white px-6 py-4 text-left"
                       >
                         Available Seats
                       </th>
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm font-medium text-white px-6 py-4 text-left"
                       >
                         Price
                       </th>
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm font-medium text-white px-6 py-4 text-left"
                       >
                         Status
                       </th>
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4  text-center"
+                        className="text-sm font-medium text-white px-6 py-4  text-center"
                       >
                         Action
                       </th>
@@ -130,7 +130,7 @@ const ManageClasses = () => {
                   <tbody>
                     {allClasses.map((item, index) => (
                       <tr
-                        className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100"
+                        className="bg-white border-b border-[#F65209] transition duration-300 ease-in-out hover:bg-gray-100"
                         key={item._id}
                       >
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">

@@ -13,7 +13,7 @@ const Banner = () => {
   return (
     
 
-    <div>
+    <div className="">
       <Swiper
         pagination={true}
         slidesPerView={1}

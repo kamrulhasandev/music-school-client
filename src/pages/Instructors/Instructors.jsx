@@ -14,7 +14,7 @@ const Instructors = () => {
   
 
   return (
-    <div className="max-w-screen-xl mx-auto pb-10">
+    <div className="max-w-screen-xl mx-auto pb-10 px-10">
       <h1 className="text-4xl font-bold text-center py-10">Instructors</h1>
       <div className="grid md:grid-cols-4 gap-10 items-center text-center">
         {instructors?.map((item) => (

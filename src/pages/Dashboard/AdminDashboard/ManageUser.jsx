@@ -84,41 +84,41 @@ const handleMakeInstructor = (user) => {
             <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
               <div className="overflow-hidden">
                 <table className="min-w-full">
-                  <thead className="bg-gray-200 border-b">
+                  <thead className="bg-[#F65209] border-b border-[#F65209]">
                     <tr>
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm font-medium text-white px-6 py-4 text-left"
                       >
                         #
                       </th>
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm font-medium text-white px-6 py-4 text-left"
                       >
                         Photo
                       </th>
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm font-medium text-white px-6 py-4 text-left"
                       >
                         Role
                       </th>
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm font-medium text-white px-6 py-4 text-left"
                       >
                         Name
                       </th>
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                        className="text-sm font-medium text-white px-6 py-4 text-left"
                       >
                         Email
                       </th>
                       <th
                         scope="col"
-                        className="text-sm font-medium text-gray-900 px-6 py-4 text-center"
+                        className="text-sm font-medium text-white px-6 py-4 text-center"
                       >
                         Status
                       </th>
@@ -129,7 +129,7 @@ const handleMakeInstructor = (user) => {
                   <tbody>
                     {users.map((user, index) => (
                       <tr
-                        className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100"
+                        className="bg-white border-b border-[#F65209] transition duration-300 ease-in-out hover:bg-gray-100"
                         key={user._id}
                       >
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">

@@ -42,7 +42,7 @@ const TopInstructor = () => {
       </div>
 
       <div className="text-center py-5">
-        <Link to={''}>
+        <Link to={'instructor'}>
             <a className="cbtn">Our All Instructor </a>
         </Link>
       </div>

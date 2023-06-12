@@ -52,9 +52,13 @@ const TopClasses = () => {
                   alt="product image"
                 />
               </a>
-              <div className="mt-4 px-5 pb-5">
-                <h5 className="text-xl tracking-tight text-slate-900">{item.className}</h5>
+              <div className="mt-4 px-5 pb-5 text-center">
+                <h5 className="text-lg font-bold py-1 tracking-tight text-slate-900">{item.className}</h5>
                 <p>Instructor: {item.instructorName}</p>
+                <div className="flex justify-around items-center">
+                <p>Available Seats: {item.availableSeats}</p>
+                <p>Students: {item.totalStudent}</p>
+                </div>
                 <div className="mt-2 mb-5 flex items-center justify-between">
                   <p>
                     <span className="text-3xl font-bold text-slate-900">Price: ${item.price}</span>

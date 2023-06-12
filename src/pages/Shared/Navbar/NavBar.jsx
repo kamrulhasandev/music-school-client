@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from '../../../assets/logo.png'
+import logoMain  from '../../../assets/logomain.png'
 import { AuthContext } from "../../../providers/AuthProvider";
 const NavBar = () => {
 
@@ -53,8 +54,8 @@ const NavBar = () => {
               {navOptions}
             </ul>
           </div>
-          <Link>
-            <img src={logo} alt="" />
+          <Link to={'/'}>
+            <img src={logoMain} className="h-14" alt="" />
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -88,7 +89,10 @@ const NavBar = () => {
         </div>
       </div>
     </div>
+   
   );
 };
 
 export default NavBar;
+
+

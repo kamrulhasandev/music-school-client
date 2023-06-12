@@ -1,18 +1,40 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { useLoaderData, useParams } from 'react-router-dom';
 
 const UpdateClassInfo = () => {
-    const id = useParams()
-    console.log(id);
-    const defaultData = useLoaderData()
-    console.log(defaultData);
+    // const id = useParams()
+    // console.log(id);
+    // // const defaultData = useLoaderData()
+    // // console.log(defaultData);
+    // useEffect(()=>{
+    //   fetch(`http://localhost:5000/updateOne/${id}`)
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     console.log(data);
+    //   })
+    // },[])
+
+
+    // const handleUpdate = (event) => {
+    //   event.preventDefault();
+    //   const form = event.target
+    //   const className = form.className.value;
+    //   const instructorName = form.instructorName.value;
+    //   const instructorEmail = form.instructorEmail.value;
+    //   const availableSeats = form.availableSeats.value;
+    //   const price = form.price.value;
+    //   console.log(className,instructorName,instructorEmail,availableSeats,price);
+    // }
+    
+
+
     return (
         <div>
             <div>
       <div className="w-1/2  mx-auto">
         <h2 className="text-center text-3xl font-bold py-5">Update A Class</h2>
-        <form  className="space-y-6 ng-untouched ng-pristine ng-valid">
+        <form onClick={handleUpdate} className="space-y-6 ng-untouched ng-pristine ng-valid">
           <div className="space-y-4">
             <div>
               <label htmlFor="className" className="block mb-2 text-sm">
@@ -20,8 +42,8 @@ const UpdateClassInfo = () => {
               </label>
               <input
                 type="text"
-                defaultValue={defaultData.className}
-                name="className"
+                // defaultValue={defaultData?.className}
+                name="name"
                 id="className"
                 placeholder="Enter Your Name Here"
                 className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#f65209] bg-gray-200 text-gray-900"
@@ -29,20 +51,7 @@ const UpdateClassInfo = () => {
               />
             </div>
 
-            <div>
-              <label htmlFor="classImage" className="block mb-2 text-sm">
-                Class Image
-              </label>
-              <input
-                type="file"
-                name="classImage"
-                id="classImage"
-                required
-                placeholder="Enter Your Email Here"
-                className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#f65209] bg-gray-200 text-gray-900"
-                data-temp-mail-org="0"
-              />
-            </div>
+            
             <div>
               <div className="flex justify-between">
                 <label htmlFor="instructorName" className="text-sm mb-2">
@@ -51,7 +60,7 @@ const UpdateClassInfo = () => {
               </div>
               <input
                 type="text"
-                defaultValue={defaultData.instructorName}
+                // defaultValue={defaultData?.instructorName}
                 name="instructorName"
                 id="instructorName"
                 disabled
@@ -67,7 +76,7 @@ const UpdateClassInfo = () => {
               </div>
               <input
                 type="email"
-                defaultValue={defaultData.instructorEmail}
+                // defaultValue={defaultData?.instructorEmail}
                 name="instructorEmail"
                 id="instructorEmail"
                 disabled
@@ -83,7 +92,7 @@ const UpdateClassInfo = () => {
               </div>
               <input
                 type="number"
-                defaultValue={defaultData.availableSeats}
+                // defaultValue={defaultData?.availableSeats}
                 name="availableSeats"
                 id="availableSeats"
                 required
@@ -99,7 +108,7 @@ const UpdateClassInfo = () => {
               </div>
               <input
                 type="number"
-                defaultValue={defaultData.price}
+                // defaultValue={defaultData?.price}
                 name="price"
                 id="price"
                 required
