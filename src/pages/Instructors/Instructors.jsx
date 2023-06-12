@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Loader from "../Shared/Loader/Loader";
+import { Helmet } from "react-helmet";
 
 const Instructors = () => {
   const [instructors, setInstructors] = useState();
@@ -15,6 +16,9 @@ const Instructors = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto pb-10 px-10">
+      <Helmet>
+        <title>Music Universe | All Instructor</title>
+      </Helmet>
       <h1 className="text-4xl font-bold text-center py-10">Instructors</h1>
       <div className="grid md:grid-cols-4 gap-10 items-center text-center">
         {instructors?.map((item) => (

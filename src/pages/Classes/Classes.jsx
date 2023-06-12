@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Toaster, toast } from "react-hot-toast";
 import useSelectClass from "../../hooks/useSelectClass";
+import { Helmet } from "react-helmet";
 
 const Classes = () => {
   const [approvedClasses, isLoading] = useApprovedClass();
@@ -40,6 +41,9 @@ const Classes = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto px-5 pb-10">
+      <Helmet>
+        <title>Music Universe | All Classes</title>
+      </Helmet>
       <h1 className="text-4xl font-bold text-center py-10">All Classes</h1>
       <div className="grid md:grid-cols-4 gap-10">
         {approvedClasses.map((item) => (

@@ -14,6 +14,7 @@ import purchesImg from '../assets/purchase.png'
 import userImg from '../assets/setting-users.png'
 import myClass from '../assets/tutorials.png'
 import home from '../assets/home.png'
+import { Helmet } from "react-helmet";
 
 const Dashboard = () => {
   const [drawerOpen, setDrawerOpen] = useState(true);
@@ -29,6 +30,9 @@ const Dashboard = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Music Universe | Dashboard</title>
+      </Helmet>
       <div className="flex">
         <input
           type="checkbox"
