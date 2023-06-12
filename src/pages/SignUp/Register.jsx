@@ -81,7 +81,7 @@ const Register = () => {
   return (
     <div className="flex justify-center items-center py-20">
       <Helmet>
-        <title>Educame | Create an account</title>
+        <title>Music Universe | Create an account</title>
       </Helmet>
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10  border border-[#f65209] text-gray-900">
         <div className="mb-8 text-center">

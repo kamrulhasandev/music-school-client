@@ -1,10 +1,14 @@
 import React from 'react';
 import useSelectClass from '../../../hooks/useSelectClass';
+import { Helmet } from 'react-helmet';
 
 const MyEnrolledClasses = () => {
     const [selectClass, refetch] = useSelectClass();
     return (
         <div>
+          <Helmet>
+            <title>Music Universe | My Enrolled Classes</title>
+          </Helmet>
       <h1 className="text-4xl font-bold text-center py-5">
         My Enrolled Class
       </h1>

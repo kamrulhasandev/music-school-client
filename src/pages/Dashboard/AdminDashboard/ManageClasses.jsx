@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useAllClasses from "../../../hooks/useAllClasses";
 import { useQuery } from "@tanstack/react-query";
 import { Toaster, toast } from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const ManageClasses = () => {
   const [allClasses, refetch, isLoading] = useAllClasses();
@@ -60,6 +61,9 @@ const ManageClasses = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Music Universe | Manage Classes</title>
+      </Helmet>
       <h1 className="text-3xl font-bold text-center py-5">
         Manage All Classes
       </h1>

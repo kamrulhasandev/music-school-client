@@ -2,11 +2,15 @@ import React from 'react';
 import useMyClass from '../../../hooks/useMyClass';
 import { Toaster } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const MyClasses = () => {
     const [myClasses, refetch] = useMyClass();
     return (
         <div>
+          <Helmet>
+            <title>Music Universe | My Classes</title>
+          </Helmet>
             <h1 className="text-3xl font-bold text-center py-5">
         My Classes
       </h1>

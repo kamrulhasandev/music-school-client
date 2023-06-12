@@ -1,5 +1,6 @@
 import React from 'react';
 import usePaymentHistory from '../../../hooks/usePaymentHistory';
+import { Helmet } from 'react-helmet';
 
 const PaymentHistory = () => {
     const [historyData, refetch] = usePaymentHistory();
@@ -11,6 +12,9 @@ const PaymentHistory = () => {
 
     return (
         <div>
+          <Helmet>
+            <title>Music Universe | Payment History</title>
+          </Helmet>
       <h1 className="text-4xl font-bold text-center py-5">
         My Payment History
       </h1>

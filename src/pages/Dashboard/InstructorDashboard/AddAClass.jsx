@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { imageUpload } from "../../../utility/utility";
 import { Toaster, toast } from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const AddAClass = () => {
     const {user} = useContext(AuthContext);
@@ -50,6 +51,9 @@ const AddAClass = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Music Universe | Add Class</title>
+      </Helmet>
       <div className="w-1/2  mx-auto">
         <h2 className="text-center text-3xl font-bold py-5">Add A Class</h2>
         <form onSubmit={handleAddClass} className="space-y-6 ng-untouched ng-pristine ng-valid">

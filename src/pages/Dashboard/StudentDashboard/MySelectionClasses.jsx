@@ -2,6 +2,7 @@ import React from "react";
 import useSelectClass from "../../../hooks/useSelectClass";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const MySelectionClasses = () => {
   const [selectClass, refetch] = useSelectClass();
@@ -33,6 +34,9 @@ const MySelectionClasses = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Music Universe | My Selection Class</title>
+      </Helmet>
       <h1 className="text-4xl font-bold text-center py-5">
         My Selection Class
       </h1>

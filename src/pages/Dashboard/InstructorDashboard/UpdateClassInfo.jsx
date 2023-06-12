@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import { Toaster } from 'react-hot-toast';
 import { useLoaderData, useParams } from 'react-router-dom';
 
@@ -31,6 +32,9 @@ const UpdateClassInfo = () => {
 
     return (
         <div>
+          <Helmet>
+            <title>Music Universe | Update Class</title>
+          </Helmet>
             <div>
       <div className="w-1/2  mx-auto">
         <h2 className="text-center text-3xl font-bold py-5">Update A Class</h2>

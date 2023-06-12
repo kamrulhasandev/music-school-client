@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <div>
             <Helmet>
-                <title>Educame | Home</title>
+                <title>Music Universe | Home</title>
             </Helmet>
             <Banner/>
             <TopClasses/>
