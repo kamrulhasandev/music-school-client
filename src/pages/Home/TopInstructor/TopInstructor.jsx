@@ -17,12 +17,9 @@ const TopInstructor = () => {
   const slicedInstructors = instructors?.slice(0, 6);
   return (
     <div className="max-w-screen-xl mx-auto px-5">
-      <div className="flex flex-col items-center py-10">
-        <h3 className="text-4xl font-bold">Top Instructor</h3>
-        <p className="text-2xl text-[#F65209] pb-3">Our Top Instructor Here</p>
-        <div className="h-1 bg-[#F65209] w-3/12"></div>
-      </div>
-      <div className="grid md:grid-cols-3 gap-10">
+      <h1 className="text-4xl font-bold my-14 text-center">Popular <span className="text-[#f65209]">Instructors</span></h1>
+      <div className="grid md:grid-cols-3 gap-10" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
         {slicedInstructors?.map((item) => (
           <div key={item._id}>
             <div className="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-xl hover:shadow-[#F65209] hover:rotate-3 transform transition-all duration-300">

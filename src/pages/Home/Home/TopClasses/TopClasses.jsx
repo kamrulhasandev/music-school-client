@@ -32,13 +32,10 @@ const TopClasses = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto px-5 py-10">
-      <div className="flex flex-col items-center py-10">
-        <h3 className="text-4xl font-bold">Popular Classes</h3>
-        <p className="text-2xl text-[#F65209] pb-3">Our Popular Classes Here</p>
-        <div className="h-1 bg-[#F65209] w-3/12"></div>
-      </div>
+      <h1 className="text-4xl font-bold my-14 text-center">Popular <span className="text-[#f65209]">Classes</span></h1>
 
-      <div className="grid md:grid-cols-3 gap-10">
+      <div className="grid md:grid-cols-3 gap-10" data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
         {sliceClasses?.map((item) => (
           <div key={item._id}>
             <div className="relative  flex w-full  flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">

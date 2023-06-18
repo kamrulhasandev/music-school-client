@@ -26,7 +26,7 @@ const Banner = () => {
       >
         <SwiperSlide>
           <div
-            className="hero h-[70vh]"
+            className="hero h-[95vh]"
             style={{
               backgroundImage: `url(${slide1})`,
               backgroundPosition: "center",
@@ -54,7 +54,7 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div
-            className="hero h-[70vh]"
+            className="hero h-[95vh]"
             style={{
               backgroundImage: `url(${slide2})`,
               backgroundPosition: "center",
@@ -82,7 +82,7 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div
-            className="hero h-[70vh]"
+            className="hero h-[95vh]"
             style={{
               backgroundImage: `url(${slide3})`,
               backgroundPosition: "center",

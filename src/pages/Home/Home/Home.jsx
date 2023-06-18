@@ -5,7 +5,6 @@ import TopInstructor from '../TopInstructor/TopInstructor';
 import TopClasses from './TopClasses/TopClasses';
 import ContactUs from '../ContactUs/ContactUs';
 import AboutPage from '../../AboutPage/AboutPage';
-import Aos from 'aos';
 import MusicalInstrument from '../MusicalInstrument/MusicalInstrument';
 
 const Home = () => {
@@ -15,9 +14,9 @@ const Home = () => {
                 <title>Music Universe | Home</title>
             </Helmet>
             <Banner/>
-            <TopClasses/>
+            <TopClasses />
             <TopInstructor/>
-            <AboutPage/>
+            <AboutPage data-aos="zoom-out"/>
             <MusicalInstrument/>
             <ContactUs/>
             

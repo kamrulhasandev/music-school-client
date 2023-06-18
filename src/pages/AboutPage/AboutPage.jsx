@@ -5,7 +5,8 @@ const AboutPage = () => {
     return (
         <div className='max-w-screen-xl px-10 mx-auto py-10'>
             <div>
-                <div className='md:flex items-center gap-20'>
+                <div className='md:flex items-center gap-20' data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
                     <div className='md:w-1/2'>
                         <img src={image} alt="" />
                     </div>
