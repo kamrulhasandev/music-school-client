@@ -16,7 +16,7 @@ const Home = () => {
             <Banner/>
             <TopClasses />
             <TopInstructor/>
-            <AboutPage data-aos="zoom-out"/>
+            <AboutPage />
             <MusicalInstrument/>
             <ContactUs/>
             
