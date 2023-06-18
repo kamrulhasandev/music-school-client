@@ -6,6 +6,7 @@ import TopClasses from './TopClasses/TopClasses';
 import ContactUs from '../ContactUs/ContactUs';
 import AboutPage from '../../AboutPage/AboutPage';
 import Aos from 'aos';
+import MusicalInstrument from '../MusicalInstrument/MusicalInstrument';
 
 const Home = () => {
     return (
@@ -17,7 +18,9 @@ const Home = () => {
             <TopClasses/>
             <TopInstructor/>
             <AboutPage/>
+            <MusicalInstrument/>
             <ContactUs/>
+            
         </div>
     );
 };

@@ -21,6 +21,9 @@ const Register = () => {
     const confirmPassword = event.target.confirmPassword.value;
     console.log(name, email, photoUrl, password, confirmPassword);
 
+
+    
+
     createUser(email, password)
       .then((result) => {
         updateUserProfile(name, photoUrl)
