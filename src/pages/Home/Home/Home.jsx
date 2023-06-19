@@ -6,6 +6,7 @@ import TopClasses from './TopClasses/TopClasses';
 import ContactUs from '../ContactUs/ContactUs';
 import AboutPage from '../../AboutPage/AboutPage';
 import MusicalInstrument from '../MusicalInstrument/MusicalInstrument';
+import Testimonials from '../Testimonials/Testimonials';
 
 const Home = () => {
     return (
@@ -18,8 +19,9 @@ const Home = () => {
             <TopInstructor/>
             <AboutPage />
             <MusicalInstrument/>
+            <Testimonials/>
             <ContactUs/>
-            
+
         </div>
     );
 };
