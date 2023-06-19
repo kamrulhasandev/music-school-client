@@ -6,14 +6,14 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
 
-    <div  className="max-w-screen-xl mx-auto px-5 py-10">
+    <div  className="max-w-screen-xl mx-auto px-5 pt-10">
       <div>
-        <div className="flex justify-between">
-          <div>
+        <div className="md:flex gap-5 justify-between">
+          <div className="mb-5 md:mb-5">
             <h1 className="text-2xl font-bold">Music <span className="text-black">Universe</span></h1>
             <p>A trusted institution for learning music.</p>
           </div>
-          <div>
+          <div  className="mb-5 md:mb-5">
             <ul>
               <li className="font-bold border-b">COMPANY</li>
               <Link className="hover:text-black" to={'/'}><li>Home</li></Link>
@@ -22,7 +22,7 @@ const Footer = () => {
               <Link className="hover:text-black" to={'/dashboard'}><li>Dashboard</li></Link>
             </ul>
           </div>
-          <div>
+          <div  className="mb-5 md:mb-5">
           <ul>
               <li className="font-bold border-b">ADDRESS</li>
               <li>musicuniverse@gmail.com</li>
@@ -31,7 +31,7 @@ const Footer = () => {
               <li>Banani, Dhaka</li>
             </ul>
           </div>
-          <div>
+          <div  className="mb-5 md:mb-5">
             <li className="list-none font-bold  uppercase border-b mb-3">Social</li>
           <div className="flex gap-2">
             <FaFacebook/>
@@ -42,6 +42,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
+        <div  className="text-center pt-10 pb-2" >
+        <small>Copyright © 2023 All Rights Reserved by Music Universe</small>
+        </div>
     </div>
   );
 };
